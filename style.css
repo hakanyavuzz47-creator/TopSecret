@@ -5,7 +5,6 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  min-height: 100vh;
   overflow-x: hidden;
 }
 
@@ -18,6 +17,7 @@ body {
   align-items: center;
   gap: 25px;
   padding: 20px;
+  transition: 1s;
 }
 
 .basma-gorsel {
@@ -28,24 +28,25 @@ body {
 }
 
 button {
-  padding: 20px 42px;
+  padding: 18px 38px;
   border: none;
   border-radius: 50px;
-  background: #ff003c;
+  background: #ff2f86;
   color: white;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 28px rgba(255, 0, 60, 0.9);
+  box-shadow: 0 0 24px rgba(255, 47, 134, 0.7);
   transition: .25s;
 }
 
 button:hover {
-  transform: scale(1.08);
+  transform: scale(1.06);
 }
 
 #kacanBtn {
   position: relative;
+  background: #ff003c;
 }
 
 .eminlik {
@@ -67,59 +68,148 @@ button:hover {
 .surpriz {
   display: none;
   min-height: 100vh;
-  padding: 35px 20px;
+  position: relative;
+  background: linear-gradient(90deg, #f6b8c8 0%, #f6b8c8 24%, #fff 24%, #fff 76%, #f6b8c8 76%, #f6b8c8 100%);
+  padding: 40px 0 80px;
+  overflow: hidden;
+}
+
+.beyaz-serit {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  background: white;
+  min-height: 100vh;
+  padding: 30px 20px 80px;
+  position: relative;
+  z-index: 2;
   text-align: center;
-  background: linear-gradient(135deg, #ffd1dc, #fff0f5, #ffb6c1);
 }
 
-.surpriz h2 {
-  font-size: 42px;
+.beyaz-serit h1 {
   color: #c2185b;
-  opacity: 0;
-  animation: belir 1.5s forwards;
+  font-size: 42px;
+  margin: 10px 0 30px;
 }
 
-.galeri {
+.foto-akis {
   display: flex;
-  justify-content: center;
-  gap: 22px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
 }
 
-.galeri img {
-  width: 360px;
-  max-width: 90%;
-  border-radius: 28px;
-  box-shadow: 0 12px 35px rgba(0,0,0,.25);
+.foto {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 26px;
+  box-shadow: 0 12px 35px rgba(0,0,0,.22);
   opacity: 0;
-  transform: translateY(30px);
-  animation: belir 2s forwards;
+  transform: translateY(35px);
+  animation: fotoBelir 2s forwards;
 }
 
-.galeri img:nth-child(2) {
-  animation-delay: .6s;
+.foto:nth-child(2) {
+  animation-delay: .7s;
 }
 
-.surpriz p {
-  font-size: 23px;
-  color: #5c2a3d;
-  opacity: 0;
-  animation: belir 2s forwards;
-  animation-delay: 1s;
+#kalpAlani {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .kalp {
   position: fixed;
   top: -40px;
-  z-index: 999;
-  animation: dus 4s linear forwards;
+  animation: dus 5s linear forwards;
   pointer-events: none;
 }
 
-@keyframes belir {
+.zarf-popup,
+.mektup-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(0,0,0,.38);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.zarf-kutu {
+  background: white;
+  width: min(420px, 92%);
+  padding: 35px 25px;
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  animation: popupGel .8s forwards;
+}
+
+.zarf-ikon {
+  font-size: 70px;
+}
+
+.zarf-kutu h2 {
+  color: #c2185b;
+  font-size: 30px;
+}
+
+.mektup {
+  background: #fffafc;
+  width: min(620px, 94%);
+  padding: 34px 28px;
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  color: #5c2a3d;
+  position: relative;
+  animation: popupGel .8s forwards;
+}
+
+.mektup h2 {
+  color: #c2185b;
+  font-size: 32px;
+}
+
+.mektup p {
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+.mektup h3 {
+  color: #c2185b;
+  font-size: 26px;
+}
+
+.kapat {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  font-size: 25px;
+  border-radius: 50%;
+}
+
+@keyframes fotoBelir {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes popupGel {
+  from {
+    opacity: 0;
+    transform: scale(.85) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
   }
 }
 
@@ -130,21 +220,20 @@ button:hover {
   }
 }
 
-@media (max-width: 600px) {
-  .basma-gorsel {
-    width: 100%;
+@media (max-width: 700px) {
+  .surpriz {
+    background: linear-gradient(90deg, #f6b8c8 0%, #f6b8c8 8%, #fff 8%, #fff 92%, #f6b8c8 92%, #f6b8c8 100%);
   }
 
-  button {
-    padding: 17px 34px;
-    font-size: 18px;
+  .beyaz-serit h1 {
+    font-size: 31px;
   }
 
   .eminlik h2 {
     font-size: 34px;
   }
 
-  .surpriz h2 {
-    font-size: 30px;
+  .mektup p {
+    font-size: 17px;
   }
 }
