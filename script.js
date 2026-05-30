@@ -9,7 +9,6 @@ btn.addEventListener("touchstart", function (e) {
   kacir();
 });
 
-btn.addEventListener("click", eminMisin);
 
 function kacir() {
   if (kacmaSayisi < 4) {
