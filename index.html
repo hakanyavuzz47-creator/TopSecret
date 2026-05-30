@@ -1,67 +1,81 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Top Secret ❤️</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Secret ❤️</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <section id="giris" class="giris">
-    <img src="basma.png" class="basma-gorsel" alt="Çok gizli">
-    <button id="kacanBtn" onclick="eminMisin()">BASMA</button>
-  </section>
+    <section id="giris" class="giris">
+        <img src="basma.png" class="basma-gorsel" alt="Çok gizli">
+        <button id="kacanBtn">BASMA</button>
+    </section>
 
-  <section id="eminlik" class="eminlik">
-    <h2>Emin misin? 😳</h2>
-    <button onclick="surpriziAc()">Evet, açıyorum ❤️</button>
-  </section>
+    <section id="eminlik" class="eminlik">
+        <h2>Emin misin? 😳</h2>
+        <button onclick="surpriziAc()">Evet, açıyorum ❤️</button>
+    </section>
 
-  <section id="surpriz" class="surpriz">
-    <div id="kalpAlani"></div>
+    <section id="surpriz" class="surpriz">
 
-    <div class="beyaz-serit">
-      <h1>İyi ki doğdun Zinnur ❤️</h1>
+        <div id="kalpAlani"></div>
 
-      <div class="foto-akis">
-        <img src="ZinnurDGKO.jpeg" class="foto" alt="Zinnur">
-        <img src="zinnurdogumgunupastasi.png" class="foto" alt="Doğum günü pastası">
-      </div>
-    </div>
+        <div class="beyaz-serit">
 
-    <div id="zarfPopup" class="zarf-popup">
-      <div class="zarf-kutu">
-        <div class="zarf-ikon">💌</div>
-        <h2>Bir zarfın var...</h2>
-        <button onclick="zarfiAc()">Zarfı aç</button>
-      </div>
-    </div>
+            <h1>İyi ki doğdun Zinnur ❤️</h1>
 
-    <div id="mektupPopup" class="mektup-popup">
-      <div class="mektup">
-        <button class="kapat" onclick="mektubuKapat()">×</button>
-        <h2>Sevgili Zinnur,</h2>
-        <p>
-          21 yaşını geride bırakıp 22 yaşına adım attığın bu güzel günde,
-          hayatımıza kattığın neşeyi, güzelliği ve enerjiyi kutlamak istedik.
-        </p>
-        <p>
-          İyi ki doğdun, iyi ki bizimlesin. Varlığınla her ortamı daha sıcak,
-          daha güzel ve daha unutulmaz yapıyorsun.
-        </p>
-        <p>
-          Yeni yaşın sana bol kahkaha, güzel anılar, huzur, başarı ve kalbinden
-          geçen ne varsa onu getirsin. Seni çok seviyoruz.
-        </p>
-        <h3>Nice mutlu yaşlara Zinnur ❤️</h3>
-      </div>
-    </div>
-  </section>
+            <div class="foto-akis">
+                <img src="zinnur1.jpeg" class="foto" alt="Zinnur">
+                <img src="zinnur2.png" class="foto" alt="Doğum Günü">
+            </div>
 
-  <audio id="muzik" loop>
-    <source src="muzik.mp3" type="audio/mpeg">
-  </audio>
+        </div>
 
-  <script src="script.js"></script>
+        <div id="zarfPopup" class="zarf-popup">
+            <div class="zarf-kutu">
+                <div class="zarf-ikon">💌</div>
+                <h2>Bir zarfın var...</h2>
+                <button onclick="zarfiAc()">Zarfı Aç</button>
+            </div>
+        </div>
+
+        <div id="mektupPopup" class="mektup-popup">
+            <div class="mektup">
+
+                <button class="kapat" onclick="mektubuKapat()">×</button>
+
+                <h2>Sevgili Zinnur,</h2>
+
+                <p>
+                    21 yaşını geride bırakıp 22 yaşına adım attığın bu güzel günde,
+                    hayatımıza kattığın neşeyi, güzelliği ve enerjiyi kutlamak istedik.
+                </p>
+
+                <p>
+                    İyi ki doğdun, iyi ki bizimlesin.
+                    Varlığınla her ortamı daha sıcak, daha güzel ve daha unutulmaz yapıyorsun.
+                </p>
+
+                <p>
+                    Yeni yaşın sana bol kahkaha, güzel anılar, huzur, başarı ve
+                    kalbinden geçen ne varsa onu getirsin.
+                    Seni çok seviyoruz.
+                </p>
+
+                <h3>Nice mutlu yaşlara Zinnur ❤️</h3>
+
+            </div>
+        </div>
+
+    </section>
+
+    <audio id="muzik" loop>
+        <source src="muzik.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
