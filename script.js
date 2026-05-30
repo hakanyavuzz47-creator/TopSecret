@@ -28,19 +28,45 @@ function surpriziAc() {
 
   document.getElementById("muzik").play();
 
-  setInterval(kalpYagdir, 900);
+  setInterval(kalpYagdir, 650);
+
+  setTimeout(() => {
+    document.getElementById("zarfPopup").style.display = "flex";
+  }, 8000);
+}
+
+function zarfiAc() {
+  document.getElementById("zarfPopup").style.display = "none";
+  document.getElementById("mektupPopup").style.display = "flex";
+}
+
+function mektubuKapat() {
+  document.getElementById("mektupPopup").style.display = "none";
 }
 
 function kalpYagdir() {
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 7; i++) {
     const kalp = document.createElement("div");
     kalp.className = "kalp";
-    kalp.innerHTML = Math.random() > 0.5 ? "❤️" : "🎉";
-    kalp.style.left = Math.random() * 100 + "vw";
-    kalp.style.fontSize = Math.random() * 24 + 18 + "px";
-    kalp.style.animationDuration = Math.random() * 2 + 3 + "s";
-    document.body.appendChild(kalp);
+    kalp.innerHTML = Math.random() > 0.5 ? "❤️" : "💕";
 
-    setTimeout(() => kalp.remove(), 5000);
+    const solMu = Math.random() > 0.5;
+
+    if (window.innerWidth > 700) {
+      kalp.style.left = solMu
+        ? Math.random() * 18 + "vw"
+        : Math.random() * 18 + 82 + "vw";
+    } else {
+      kalp.style.left = solMu
+        ? Math.random() * 7 + "vw"
+        : Math.random() * 7 + 93 + "vw";
+    }
+
+    kalp.style.fontSize = Math.random() * 22 + 18 + "px";
+    kalp.style.animationDuration = Math.random() * 2 + 4 + "s";
+
+    document.getElementById("kalpAlani").appendChild(kalp);
+
+    setTimeout(() => kalp.remove(), 6500);
   }
 }
