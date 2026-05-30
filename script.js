@@ -1,13 +1,21 @@
 let kacmaSayisi = 0;
+
 const btn = document.getElementById("kacanBtn");
 
 btn.addEventListener("mouseover", kacir);
-btn.addEventListener("touchstart", kacir);
+
+btn.addEventListener("touchstart", function (e) {
+  e.preventDefault();
+  kacir();
+});
+
+btn.addEventListener("click", eminMisin);
 
 function kacir() {
   if (kacmaSayisi < 4) {
     const x = Math.random() * 180 - 90;
     const y = Math.random() * 160 - 80;
+
     btn.style.transform = `translate(${x}px, ${y}px)`;
     kacmaSayisi++;
   }
@@ -26,7 +34,11 @@ function surpriziAc() {
   document.getElementById("eminlik").style.display = "none";
   document.getElementById("surpriz").style.display = "block";
 
-  document.getElementById("muzik").play().catch(() => {});
+  const muzik = document.getElementById("muzik");
+
+  muzik.play().catch(() => {
+    console.log("Müzik tarayıcı tarafından engellendi.");
+  });
 
   setInterval(kalpYagdir, 650);
 
@@ -45,8 +57,11 @@ function mektubuKapat() {
 }
 
 function kalpYagdir() {
+  const kalpAlani = document.getElementById("kalpAlani");
+
   for (let i = 0; i < 7; i++) {
     const kalp = document.createElement("div");
+
     kalp.className = "kalp";
     kalp.innerHTML = Math.random() > 0.5 ? "❤️" : "💕";
 
@@ -65,8 +80,10 @@ function kalpYagdir() {
     kalp.style.fontSize = Math.random() * 22 + 18 + "px";
     kalp.style.animationDuration = Math.random() * 2 + 4 + "s";
 
-    document.getElementById("kalpAlani").appendChild(kalp);
+    kalpAlani.appendChild(kalp);
 
-    setTimeout(() => kalp.remove(), 6500);
+    setTimeout(() => {
+      kalp.remove();
+    }, 6500);
   }
 }
