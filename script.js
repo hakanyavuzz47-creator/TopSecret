@@ -1,29 +1,25 @@
-function surpriz() {
+function ac() {
+  document.getElementById("giris").style.display = "none";
+  document.getElementById("surpriz").style.display = "block";
+
   const muzik = document.getElementById("muzik");
   muzik.play();
 
-  for (let i = 0; i < 40; i++) {
+  kalpYagdir();
+}
+
+function kalpYagdir() {
+  for (let i = 0; i < 55; i++) {
     const kalp = document.createElement("div");
-    kalp.innerHTML = "❤️";
-    kalp.style.position = "fixed";
+    kalp.className = "kalp";
+    kalp.innerHTML = Math.random() > 0.5 ? "❤️" : "🎉";
     kalp.style.left = Math.random() * 100 + "vw";
-    kalp.style.top = "-30px";
-    kalp.style.fontSize = Math.random() * 25 + 20 + "px";
-    kalp.style.animation = "dus 3s linear forwards";
+    kalp.style.fontSize = Math.random() * 24 + 18 + "px";
+    kalp.style.animationDuration = Math.random() * 2 + 2.5 + "s";
     document.body.appendChild(kalp);
 
     setTimeout(() => {
       kalp.remove();
-    }, 3000);
+    }, 5000);
   }
 }
-
-const style = document.createElement("style");
-style.innerHTML = `
-@keyframes dus {
-  to {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
-}`;
-document.head.appendChild(style);
