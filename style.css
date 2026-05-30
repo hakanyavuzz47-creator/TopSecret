@@ -1,0 +1,24 @@
+body {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding-top: 100px;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+}
+
+p {
+    font-size: 24px;
+    color: #333;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
