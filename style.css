@@ -5,68 +5,63 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ffd1dc, #fff0f5, #ffb6c1);
   min-height: 100vh;
   overflow-x: hidden;
 }
 
 .giris {
   min-height: 100vh;
+  background: #030303;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #050505;
-  color: white;
-  text-align: center;
+  gap: 25px;
   padding: 20px;
 }
 
-.giris h1 {
-  font-size: 46px;
-  letter-spacing: 4px;
-  margin-bottom: 5px;
-}
-
-.giris p {
-  font-size: 22px;
-  color: #ffb6c1;
-  margin-bottom: 30px;
-}
-
-.gizli-alan {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-.ajan {
-  width: 190px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 24px;
-  border: 3px solid #ffb6c1;
-  box-shadow: 0 0 25px rgba(255, 182, 193, 0.6);
+.basma-gorsel {
+  width: 900px;
+  max-width: 95%;
+  border-radius: 28px;
+  box-shadow: 0 0 35px rgba(255, 0, 80, 0.35);
 }
 
 button {
-  padding: 22px 42px;
-  font-size: 22px;
-  font-weight: bold;
+  padding: 20px 42px;
   border: none;
   border-radius: 50px;
-  background: #ff2f86;
+  background: #ff003c;
   color: white;
+  font-size: 22px;
+  font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 25px rgba(255, 47, 134, 0.8);
-  transition: 0.3s;
+  box-shadow: 0 0 28px rgba(255, 0, 60, 0.9);
+  transition: .25s;
 }
 
 button:hover {
   transform: scale(1.08);
-  background: #ff006e;
+}
+
+#kacanBtn {
+  position: relative;
+}
+
+.eminlik {
+  display: none;
+  min-height: 100vh;
+  background: #000;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.eminlik h2 {
+  font-size: 48px;
+  color: #ffb6c1;
 }
 
 .surpriz {
@@ -80,13 +75,13 @@ button:hover {
 .surpriz h2 {
   font-size: 42px;
   color: #c2185b;
-  margin-bottom: 25px;
+  opacity: 0;
+  animation: belir 1.5s forwards;
 }
 
 .galeri {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 22px;
   flex-wrap: wrap;
 }
@@ -95,21 +90,37 @@ button:hover {
   width: 360px;
   max-width: 90%;
   border-radius: 28px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+  box-shadow: 0 12px 35px rgba(0,0,0,.25);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: belir 2s forwards;
+}
+
+.galeri img:nth-child(2) {
+  animation-delay: .6s;
 }
 
 .surpriz p {
   font-size: 23px;
   color: #5c2a3d;
-  margin-top: 25px;
+  opacity: 0;
+  animation: belir 2s forwards;
+  animation-delay: 1s;
 }
 
 .kalp {
   position: fixed;
   top: -40px;
   z-index: 999;
-  animation: dus 3s linear forwards;
+  animation: dus 4s linear forwards;
   pointer-events: none;
+}
+
+@keyframes belir {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes dus {
@@ -120,18 +131,17 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-  .giris h1 {
-    font-size: 34px;
-  }
-
-  .ajan {
-    width: 140px;
-    height: 190px;
+  .basma-gorsel {
+    width: 100%;
   }
 
   button {
-    padding: 18px 34px;
+    padding: 17px 34px;
     font-size: 18px;
+  }
+
+  .eminlik h2 {
+    font-size: 34px;
   }
 
   .surpriz h2 {
