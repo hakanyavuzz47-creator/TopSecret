@@ -2,31 +2,60 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Çok Gizli ❤️</title>
+  <title>Top Secret ❤️</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <section id="giris" class="giris">
     <img src="basma.png" class="basma-gorsel" alt="Çok gizli">
-
     <button id="kacanBtn" onclick="eminMisin()">BASMA</button>
   </section>
 
   <section id="eminlik" class="eminlik">
     <h2>Emin misin? 😳</h2>
-    <button onclick="surpriziAc()">Evet, basıyorum ❤️</button>
+    <button onclick="surpriziAc()">Evet, açıyorum ❤️</button>
   </section>
 
   <section id="surpriz" class="surpriz">
-    <h2>Bir yıl daha güzelleştin Zinnur ❤️</h2>
+    <div id="kalpAlani"></div>
 
-    <div class="galeri">
-      <img src="ZinnurDoğumGünüPastası.png">
-      <img src="ZinnurDGKO.jpeg">
+    <div class="beyaz-serit">
+      <h1>İyi ki doğdun Zinnur ❤️</h1>
+
+      <div class="foto-akis">
+        <img src="ZinnurDGKO.jpeg" class="foto" alt="Zinnur">
+        <img src="ZinnurDoğumGünüPastası.png" class="foto" alt="Doğum günü pastası">
+      </div>
     </div>
 
-    <p>İyi ki doğdun, iyi ki varsın. Nice güzel yaşlara 🎂✨</p>
+    <div id="zarfPopup" class="zarf-popup">
+      <div class="zarf-kutu">
+        <div class="zarf-ikon">💌</div>
+        <h2>Bir zarfın var...</h2>
+        <button onclick="zarfiAc()">Zarfı aç</button>
+      </div>
+    </div>
+
+    <div id="mektupPopup" class="mektup-popup">
+      <div class="mektup">
+        <button class="kapat" onclick="mektubuKapat()">×</button>
+        <h2>Sevgili Zinnur,</h2>
+        <p>
+          22 yaşını geride bırakıp 23 yaşına adım attığın bu güzel günde,
+          hayatımıza kattığın neşeyi, güzelliği ve enerjiyi kutlamak istedik.
+        </p>
+        <p>
+          İyi ki doğdun, iyi ki bizimlesin. Varlığınla her ortamı daha sıcak,
+          daha güzel ve daha unutulmaz yapıyorsun.
+        </p>
+        <p>
+          Yeni yaşın sana bol kahkaha, güzel anılar, huzur, başarı ve kalbinden
+          geçen ne varsa onu getirsin. Seni çok seviyoruz.
+        </p>
+        <h3>Nice mutlu yaşlara Zinnur ❤️</h3>
+      </div>
+    </div>
   </section>
 
   <audio id="muzik" loop>
