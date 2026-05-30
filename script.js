@@ -26,7 +26,7 @@ function surpriziAc() {
   document.getElementById("eminlik").style.display = "none";
   document.getElementById("surpriz").style.display = "block";
 
-  document.getElementById("muzik").play();
+  document.getElementById("muzik").play().catch(() => {});
 
   setInterval(kalpYagdir, 650);
 
